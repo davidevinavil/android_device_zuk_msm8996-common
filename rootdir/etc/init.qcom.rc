@@ -595,6 +595,9 @@ on property:init.svc.surfaceflinger=restarting
 on property:slpi.restart=1
     write /sys/kernel/debug/msm_subsys/slpi restart
 
+on property:vendor.media.target.version=*
+    setprop vendor.sys.media.target.version ${vendor.media.target.version}
+
 on property:vold.decrypt=trigger_reset_main
     stop audio-hal-2-0
 

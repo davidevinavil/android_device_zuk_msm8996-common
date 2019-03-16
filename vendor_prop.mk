@@ -206,6 +206,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.usb.rmnet.inst.name=rmnet \
     vendor.usb.rndis.func.name=rndis_bam
 
+# VSync for CPU rendered app
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    debug.cpurend.vsync=false
+
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0

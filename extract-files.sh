@@ -52,6 +52,52 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
+<<<<<<< HEAD
+=======
+function blob_fixup() {
+    case "${1}" in
+
+    # Patch libmmcamera2_stats_modules
+    vendor/lib/libmmcamera2_stats_modules.so)
+        sed -i "s|libgui.so|libfui.so|g" "${2}"
+        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "${2}"
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
+    # Patch blobs for VNDK
+    vendor/lib/libmmcamera_ppeiscore.so)
+        sed -i "s|libgui.so|libfui.so|g" "${2}"
+        ;;
+    vendor/lib/libmpbase.so)
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
+    # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+    vendor/lib64/hw/fingerprint.qcom.so)
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+
+    # Hex edit libaudcal.so to store acdbdata in new paths
+    vendor/lib/libaudcal.so | vendor/lib64/libaudcal.so)
+        sed -i "s|/data/vendor/misc/audio/acdbdata/delta/|/data/vendor/audio/acdbdata/delta/\x00\x00\x00\x00\x00|g" "${2}"
+        ;;
+
+    # Hex edit camera blobs to use /data/vendor/qcam
+   vendor/lib/libmm-qcamera.so | vendor/lib/libmmcamera2_cpp_module.so | vendor/lib/libmmcamera2_iface_modules.so | vendor/lib/libmmcamera2_imglib_modules.so | vendor/lib/libmmcamera2_mct.so | vendor/lib/libmmcamera2_pproc_modules.so | vendor/lib/libmmcamera2_stats_algorithm.so | vendor/lib/libmmcamera_dbg.so | vendor/lib/libmmcamera_hvx_grid_sum.so | vendor/lib/libmmcamera_hvx_zzHDR.so | vendor/lib/libmmcamera_imglib.so | vendor/lib/libmmcamera_isp_mesh_rolloff44.so | vendor/lib/libmmcamera_pdaf.so | vendor/lib/libmmcamera_pdafcamif.so | vendor/lib/libmmcamera_tintless_algo.so | vendor/lib/libmmcamera_tintless_bg_pca_algo.so | vendor/lib/libmmcamera_tuning.so)
+        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "${2}"
+        ;;
+    vendor/bin/mm-qcamera-daemon)
+        sed -i "s|/data/vendor/camera/cam_socket%d|/data/vendor/qcam/camer_socket%d|g" "${2}"
+        ;;
+
+	# Remove libmedia.so dependency from lib-dplmedia.so
+    vendor/lib64/lib-dplmedia.so)
+        patchelf --remove-needed libmedia.so "${2}"
+        ;;
+    esac
+}
+
+>>>>>>> 140f193b8... msm8996-common: Update blobs to LA.UM.7.5.r1-04800-8x96.0
 # Initialize the helper for common device
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 

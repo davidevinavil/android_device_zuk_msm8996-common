@@ -70,6 +70,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true \
+    ro.sys.fw.dex2oat_thread_count=4
+
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \

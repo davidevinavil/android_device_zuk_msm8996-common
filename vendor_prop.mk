@@ -197,6 +197,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     persist.delta_time.enable=true
 
+# USAP
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
+
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3 \

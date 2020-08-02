@@ -50,6 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1 \
     persist.camera.preview.ubwc=0 \
     persist.camera.video.ubwc=0 \
     persist.camera.gyro.disable=0 \

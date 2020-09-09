@@ -193,8 +193,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/calib.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/calib.cfg
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    ZukDoze
+#PRODUCT_PACKAGES += \
+#    ZukDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -251,8 +251,8 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0_system
 
 # IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common_system
+# PRODUCT_PACKAGES += \
+#     ims-ext-common_system
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -291,8 +291,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.zuk_8996
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -373,13 +373,13 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common_system \
-    telephony-ext
+# PRODUCT_PACKAGES += \
+#    ims-ext-common_system \
+#    telephony-ext
 
 # PRODUCT_BOOT_JARS += \
-    ims-ext-common_system \
-    telephony-ext
+#    ims-ext-common_system \
+#    telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \

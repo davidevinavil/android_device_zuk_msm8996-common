@@ -428,7 +428,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.zuk_msm8996 \
+    android.hardware.biometrics.fingerprint@2.1-service.zuk_msm8996
 
 # Thermal
 PRODUCT_PACKAGES += \

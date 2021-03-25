@@ -1,3 +1,0 @@
-allow cnd system_data_file:file { getattr ioctl read };
-
-allow cnd sysfs:file { open read };

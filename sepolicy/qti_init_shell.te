@@ -9,4 +9,7 @@ allow qti_init_shell mnt_vendor_file:file create_file_perms;
 allow qti_init_shell persist_bluetooth_file:dir { add_name create search write };
 allow qti_init_shell persist_bluetooth_file:file { create getattr open read write };
 
-set_prop(qti_init_shell, bt_mac_prop)
+# Allow qti_init_shell to read cmdline
+allow qti_init_shell proc_cmdline:file { getattr open read };
+
+set_prop(qti_init_shell, oem_unlock_prop)

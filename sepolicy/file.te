@@ -1,3 +1,6 @@
+# acdbdelta
+type acdbdelta_vendor_data_file, file_type, data_file_type;
+
 # /data
 type fpc_data_file, core_data_file_type, data_file_type, file_type;
 type thermal_data_file, core_data_file_type, data_file_type, file_type;

@@ -1,2 +1,5 @@
 get_prop(system_server, vendor_alarm_boot_prop)
 allow system_server sysfs_vibrator:file read;
+
+get_prop(system_server, userspace_reboot_config_prop)
+get_prop(system_server, userspace_reboot_exported_prop)

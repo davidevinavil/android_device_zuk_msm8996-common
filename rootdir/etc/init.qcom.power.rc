@@ -74,7 +74,7 @@ on charger
     write /sys/module/msm_thermal/parameters/enabled "N"
     start thermal-engine
 
-on enable-low-power
+    on enable-low-power
     # Disable thermal hotplug to switch governor
     write /sys/module/msm_thermal/core_control/enabled 0
 
@@ -182,7 +182,9 @@ on property:sys.boot_completed=1
 on property:init.svc.recovery=running
     trigger enable-low-power
 
-service charger /sbin/chargeonlymode
+service charger /system/bin/charger
     class charger
-    group system graphics
-#    seclabel u:r:healthd:s0
+    user system
+    group system graphics input
+    capabilities SYS_BOOT
+    seclabel u:r:charger:s0

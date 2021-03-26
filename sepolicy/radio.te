@@ -1,0 +1,2 @@
+allow radio hal_datafactory_hwservice:hwservice_manager find;
+allow radio vendor_qcom_ims_prop:file { getattr open read };

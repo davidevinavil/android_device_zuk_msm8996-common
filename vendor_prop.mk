@@ -108,10 +108,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.renderer=skiavk \
+    ro.hardware.vulkan=adreno \
+    ro.hardware.egl=adreno \
     debug.egl.hw=1 \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
-    debug.sdm.support_writeback=0 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \

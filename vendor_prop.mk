@@ -181,7 +181,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
-    persist.sys.fflag.override.settings_fuse=false
+    persist.sys.fflag.override.settings_fuse=false \
+    mm.sec.enable.smoothstreaming=true \
+    mmp.enable.3g2=true \
+    media.stagefright.audio.sink=280 \
+    vendor.mm.enable.qcom_parser=1048575 \
+    vendor.vidc.debug.level=0 \
+    vendor.vidc.disable.split.mode=1 \
+    debug.stagefright.omx_default_rank=0 \
+    media.settings.xml=/system/vendor/etc/media_profiles_vendor.xml
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \

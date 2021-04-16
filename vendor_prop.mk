@@ -113,7 +113,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.renderer=skiavk \
     ro.hardware.vulkan=adreno \
     ro.hardware.egl=adreno \
     debug.egl.hw=1 \

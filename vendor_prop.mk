@@ -181,7 +181,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
-    persist.sys.fflag.override.settings_fuse=false
+    persist.sys.fflag.override.settings_fuse=false \
+    mmp.enable.3g2=true \
+    media.aac_51_output_enabled=true \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
